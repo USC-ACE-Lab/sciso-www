@@ -1,0 +1,58 @@
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 5.4rem;
+    margin: 1rem 2rem;
+    align-items: center;
+    box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.08);
+}
+
+.navContainer a:link, .navContainer a:visited {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.navLogo {
+    height: 2.2rem;
+}
+
+.navLogo.underlineOnHover {
+    position: relative;
+}
+
+.navLogo.underlineOnHover::after {
+    bottom: -0.5rem;
+}
+
+.navTitle {
+    font-size: 2rem;
+}
+
+.navTitle.underlineOnHover {
+    position: relative;
+}
+
+.underlineOnHover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0.2rem;
+    background: #F48024;
+    transition: width 0.3s;
+}
+
+.underlineOnHover:hover::after {
+    width: 100%;
+}
+
+.navLogo svg {
+    height: 100%;
+    width: auto;
+    color: #3e3e3e;
+}
+
+.mainContainer {
+    margin: 2.4rem 2rem;
+}

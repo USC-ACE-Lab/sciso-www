@@ -1,0 +1,30 @@
+.intro {
+    font-size: 1.36rem;
+    color: #3a3a3a;
+    text-align: justify;
+}
+
+.question_paragraph {
+    font-style: italic;
+    color: #6a6a6a;
+    margin: 1rem 0;
+}
+
+.section_title {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #3e3e3e;
+    margin-top: 2rem;
+    padding-left: 0.8rem;
+    border-left: #F48024 0.3rem solid;
+}
+
+.graph_container {
+    margin: 1.2rem 0 2.7rem 0;
+    font-size: 1.2rem;
+    color: #6a6a6a;
+}
+
+.graph_container>div {
+    width: 100%;
+}
