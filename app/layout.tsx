@@ -7,6 +7,7 @@ import Stack from "@/app/ui/Stack";
 import { alegreya, roboto_mono } from "@/app/ui/Fonts";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import Footer from "./ui/Footer";
 
 export default function RootLayout({
   children,
@@ -19,7 +20,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      <body style={{ position: "relative" }}>
         <header>
           <nav className={styles.navContainer}>
             <Link
@@ -56,6 +57,7 @@ export default function RootLayout({
           <Analytics />
         </header>
         <main className={styles.mainContainer}>{children}</main>
+        <Footer />
       </body>
     </html>
   );

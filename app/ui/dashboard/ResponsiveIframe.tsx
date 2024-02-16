@@ -1,11 +1,19 @@
 "use client";
 import { useElementWidth } from "@/lib/hooks";
 
-export default function ResponsiveIframe({ src }: { src: string }) {
-  const { ref, width } = useElementWidth();
+export default function ResponsiveIframe({
+  src,
+  width,
+  height,
+}: {
+  src: string;
+  width: number;
+  height: number;
+}) {
+  const { ref, width: divWidth } = useElementWidth();
 
-  const scaleFactor = width / 560;
-  const scaledHeight = 400 * scaleFactor;
+  const scaleFactor = divWidth / width;
+  const scaledHeight = height * scaleFactor;
 
   return (
     <div
@@ -19,10 +27,10 @@ export default function ResponsiveIframe({ src }: { src: string }) {
     >
       <iframe
         src={src}
-        width="560"
-        height="400"
+        width={width}
+        height={height}
         style={{
-          transform: `scale(${width / 560})`,
+          transform: `scale(${scaleFactor})`,
           transformOrigin: "left top",
           border: "none",
           position: "absolute",

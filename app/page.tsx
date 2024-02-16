@@ -18,7 +18,6 @@ async function getData(path: string) {
 export default async function Page() {
   const heatmapData = await getData("/hm.json");
   const simplifiedHeatmapData = await getData("/hm_simplified.json");
-  const venueData = await getData("/venue.json");
 
   return (
     <Fragment>
@@ -160,7 +159,7 @@ export default async function Page() {
               reflects the article’s PageRank score, denoting its importance and
               influence across the network
             </div>
-            <ResponsiveIframe src="/cc.html" />
+            <ResponsiveIframe src="/cc.html" width={900} height={720} />
           </Stack>
         </Stack>
       </section>
