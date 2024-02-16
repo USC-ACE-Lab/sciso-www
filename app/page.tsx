@@ -117,7 +117,6 @@ export default async function Page() {
           align="start"
           gap="1.6rem"
           className={styles.graph_container}
-          style={{ marginBottom: 0 }}
         >
           <Stack align="start">
             <div>
