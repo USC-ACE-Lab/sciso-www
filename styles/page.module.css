@@ -4,6 +4,10 @@
     text-align: justify;
 }
 
+.intro a {
+    color: #F48024;
+}
+
 .question_paragraph {
     font-style: italic;
     color: #6a6a6a;

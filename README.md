@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## A Tale of Two Communities: Exploring Academic References on Stack Overflow
 
-## Getting Started
+### Website: https://sciso.vercel.app/
 
-First, run the development server:
+<small>
+Supplemental Artifacts
+</small>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Included Academic Repositories
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Each academic repository may have multiple web domains, e.g., ACL articles may be hosted on [aclanthology.org](https://aclanthology.org/) or [aclweb.org](http://aclweb.org/). For a full list of curated web domains, see `pub_regs.json`.
+| Type | Sources |
+| ----------- | ----------- |
+| Publishers | ACM, BMC, Cambridge University Press, De Gruyter, Elsevier, Emerald, Frontiers, Hindawi, ICST, IEEE, IET, IGI Global, Inderscience, INFORMS, Ingenta, IOS Press, Liebert Open Access, MDPI, MIT Press, NOW Publishers, Old City Publishing, Oxford University Press, revues online, RonPub, SAGE Publications, SIAM, Springer, Taylor & Francis, Versita, Wiley, World Scientific |
+| Academic Socieities | Association for Computational Linguistics<br><small>_including: ACL, NAACL, EMNLP, EACL, etc._</small><hr>Association for the Advancement of Artificial Intelligence<br><small>_including: AAAI, IAI, ICWSM, etc._</small><hr>International Machine Learning Society<br><small>_including: JMLR, ICML, MLR, TMLR, etc._</small><hr>International Association for Cryptologic Research<br><small>_including: Crypto, AsiaCrypt, Fast Software Encryption_</small><hr>Computer Vision Foundation<br><small>_including: CVPR, ICCV, ECCV, WACV_</small><hr>USENIX<br><small>_including: OSDI, NSDI, USENIX Security, ATC_</small><hr>American Math Society<hr>ACM Special Interest Groups (SIGs)<br><small>*note: some SIGs may host programs on their individual domains, e.g., SIGCHI.org</small><hr>IEEE Computer Society<hr>Individual Conferences<br><small>*including: ICLR, IJCAI, NeurIPS, NDSS, VLDB, WWW, EMSOFT\*</small>|
+| Academic Databases | arXiv, OpenReview, paperswithcode, Semantic Scholar, ResearchGate, Nature, PloS, PNAS, Cell Press, NIH (PubMed, PubChem), HAL, NBN Resolver, CEUR Workshop Proceedings
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<!-- USENIX, ACM SIGs (e.g., SIGCHI), IEEE Computer Society<hr>Computer Vision Foundation,<br>International Association for Cryptologic Research,<br>International Machine Learning Society,<br>Association for the Advancement of Artificial Intelligence,<br>Association for Computational Linguistics<br>| -->
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 2. Dataset of Academic References
 
-## Learn More
+This dataset is a comprehensive collection of 15009 academic references cited in Stack Overflow posts (including questions, answers, community wikis, etc.) as of December 8, 2023. It represents a valuable resource for researchers and practitioners interested in understanding the intersection of academic knowledge and discussions about practical challenges on one of the largest technical forums online.
 
-To learn more about Next.js, take a look at the following resources:
+_Access the dataset [here](https://doi.org/10.6084/m9.figshare.25195805.v1)_
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### 2.1 Dataset Format
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The data is structured in Line-delimited JSON (JSONL) format. Each line contains metadata of an academic reference (e.g., see `meta_example.json`). Fields in the metadata are described below.
 
-## Deploy on Vercel
+#### 2.2 Field Description
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- PostId  
+  ID of the post containing this academic reference. Corresponding to the `Id` field in the [`StackOverflow-posts`](https://archive.org/download/stackexchange/stackoverflow.com-Posts.7z) table of the official Stack Exchange data dump.  
+  _e.g.,_ [`74109833`](https://stackoverflow.com/questions/74109833/how-to-set-learning-rate-0-2-when-training-transformer-with-noam-decay) <small>(click to see the original post on Stack Overflow)</small>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Url  
+  URL of the academic reference.  
+  _e.g.,_ [`https://aclanthology.org/C18-1054.pdf`](https://aclanthology.org/C18-1054.pdf)
+
+- metadata
+
+  - title
+  - authors
+  - venue  
+     <small>Normalized to the full official name via Semantic Scholar<br>(e.g., ACL -> Annual Meeting of the Association for Computational Linguistics)</small>
+  - open_access  
+    <small>Whether the referenced article is publicly accessible</small>
+  - citation_count
+  - abstract
+  - type
+  - external_ids
+  - year
+  - concepts
+
+- Topic  
+  Topic label assigned by BERTopic
+
+- RevisionId  
+  We collected URLs from every historic version of a post. RevisionId is the ID of the changelog where we found this academic reference. Corresponding to the `Id` field in the [`StackOverflow-PostHistory`](https://archive.org/download/stackexchange/stackoverflow.com-PostHistory.7z) table of the official Stack Exchange data dump.  
+  _e.g.,_ `280345137`
+
+- History  
+  Type of edits (e.g., initial, edit title, edit body, etc.). Corresponding to the `PostHistoryTypeId` field in the [`StackOverflow-PostHistory`](https://archive.org/download/stackexchange/stackoverflow.com-PostHistory.7z) table of the official Stack Exchange data dump. See [here](https://meta.stackexchange.com/questions/2677/database-schema-documentation-for-the-public-data-dump-and-sede) for details.
+
+- AnswerCount
+- CommentCount
+- FavoriteCount
+- PostTyepeId
+- Score
+- ViewCount
+
+### 3. Interactive Figures
+
+https://sciso.vercel.app/

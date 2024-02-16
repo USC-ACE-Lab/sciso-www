@@ -6,7 +6,6 @@ import { Fragment } from "react";
 import Heatmap, { RowHeatmapWithSelect } from "@/app/ui/dashboard/Heatmap";
 import Stack from "./ui/Stack";
 import ResponsiveIframe from "./ui/dashboard/ResponsiveIframe";
-import Swarm from "./ui/dashboard/Swarm";
 
 async function getData(path: string) {
   const res = await fetch(`${getBaseUrl()}/${path}`);
@@ -25,9 +24,10 @@ export default async function Page() {
     <Fragment>
       <article className={`${alegreya.className} ${styles.intro}`}>
         Stack Overflow is widely recognized as a go-to resource for quick
-        technical fixes, rather than a forum for scholarly debates. However, it
-        is not uncommon to encounter references to academic research in Stack
-        Overflow discussions, which naturally prompts a series of questions...
+        technical fixes and not typically seen as a forum for scholarly debates.
+        However, it is not uncommon to find references to academic research in
+        Stack Overflow discussions, which naturally prompts a series of
+        questions...
         <p className={styles.question_paragraph}>
           Why is this the case? What academic research is being cited and who is
           citing it? What motivates Stack Overflow users to refer to academic
@@ -40,7 +40,11 @@ export default async function Page() {
         edit histories of 59 million posts (totaling 160 million revisions) and
         identified 15,066 references to 10,718 unique academic articles
         published in over 2,900 venues. We have made the dataset available for{" "}
-        <Link href="https://figshare.com/articles/dataset/The_SORef_Dataset/25195805/1">
+        <Link
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://figshare.com/articles/dataset/The_SORef_Dataset/25195805/1"
+        >
           download
         </Link>
         , aiming to facilitate further research into the interaction of academic
@@ -158,9 +162,6 @@ export default async function Page() {
             </div>
             <ResponsiveIframe src="/cc.html" />
           </Stack>
-          {/* <Stack align="start">
-            <Swarm data={venueData} height="24rem" />
-          </Stack> */}
         </Stack>
       </section>
     </Fragment>

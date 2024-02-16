@@ -1,0 +1,626 @@
+{
+    "_id": {
+        "$oid": "658fb95699b2073d58cd62f7"
+    },
+    "Url": "https://aclanthology.org/C18-1054.pdf",
+    "PostId": "74109833",
+    "History": "2",
+    "LinkType": "pdf",
+    "AddedAt": "2022-10-18T10:58:32.770",
+    "AddedBy": "14096975",
+    "RevisionId": "280345137",
+    "Source": "acl",
+    "metadata": {
+        "title": "A Comparison of Transformer and Recurrent Neural Networks on Multilingual Neural Machine Translation",
+        "authors": [
+            {
+                "name": "Surafel Melaku Lakew",
+                "id": "29847466"
+            },
+            {
+                "name": "M. Cettolo",
+                "id": "3077970"
+            },
+            {
+                "name": "Marcello Federico",
+                "id": "102811815"
+            }
+        ],
+        "venue": {
+            "id": "f51ff783-cdff-4e22-94fb-28e6336d17b3",
+            "name": "International Conference on Computational Linguistics",
+            "type": "conference",
+            "alternate_names": [
+                "Int Conf Comput Linguistics",
+                "COLING"
+            ],
+            "url": "https://www.aclweb.org/anthology/venues/coling/"
+        },
+        "open_access": false,
+        "citation_count": 91,
+        "abstract": {
+            "Recently,": [
+                0
+            ],
+            "neural": [
+                1,
+                134
+            ],
+            "machine": [
+                2
+            ],
+            "translation": [
+                3,
+                17,
+                126
+            ],
+            "(NMT)": [
+                4
+            ],
+            "has": [
+                5
+            ],
+            "been": [
+                6
+            ],
+            "extended": [
+                7
+            ],
+            "to": [
+                8,
+                12,
+                38,
+                44
+            ],
+            "multilinguality,": [
+                9
+            ],
+            "that": [
+                10,
+                48
+            ],
+            "is": [
+                11,
+                49,
+                90,
+                96,
+                98
+            ],
+            "handle": [
+                13
+            ],
+            "more": [
+                14
+            ],
+            "than": [
+                15
+            ],
+            "one": [
+                16
+            ],
+            "direction": [
+                18
+            ],
+            "with": [
+                19
+            ],
+            "a": [
+                20,
+                55,
+                86,
+                108
+            ],
+            "single": [
+                21
+            ],
+            "system.": [
+                22
+            ],
+            "Multilingual": [
+                23
+            ],
+            "NMT": [
+                24,
+                61,
+                88
+            ],
+            "showed": [
+                25
+            ],
+            "competitive": [
+                26
+            ],
+            "performance": [
+                27
+            ],
+            "against": [
+                28
+            ],
+            "pure": [
+                29
+            ],
+            "bilingual": [
+                30
+            ],
+            "systems.": [
+                31
+            ],
+            "Notably,": [
+                32
+            ],
+            "in": [
+                33,
+                78,
+                136
+            ],
+            "low-resource": [
+                34
+            ],
+            "settings,": [
+                35
+            ],
+            "it": [
+                36,
+                95
+            ],
+            "proved": [
+                37
+            ],
+            "work": [
+                39,
+                105
+            ],
+            "effectively": [
+                40
+            ],
+            "and": [
+                41,
+                53,
+                93,
+                110,
+                120,
+                142,
+                146,
+                172,
+                180,
+                182,
+                192
+            ],
+            "efficiently,": [
+                42
+            ],
+            "thanks": [
+                43
+            ],
+            "shared": [
+                45
+            ],
+            "representation": [
+                46
+            ],
+            "space": [
+                47
+            ],
+            "forced": [
+                50
+            ],
+            "across": [
+                51,
+                66
+            ],
+            "languages": [
+                52,
+                154
+            ],
+            "induces": [
+                54
+            ],
+            "sort": [
+                56
+            ],
+            "of": [
+                57,
+                84,
+                92,
+                113,
+                128,
+                130,
+                165
+            ],
+            "transfer-learning.": [
+                58
+            ],
+            "Furthermore,": [
+                59
+            ],
+            "multilingual": [
+                60,
+                87,
+                119
+            ],
+            "enables": [
+                62
+            ],
+            "so-called": [
+                63
+            ],
+            "zero-shot": [
+                64,
+                121,
+                157
+            ],
+            "inference": [
+                65
+            ],
+            "language": [
+                67
+            ],
+            "pairs": [
+                68
+            ],
+            "never": [
+                69
+            ],
+            "seen": [
+                70
+            ],
+            "at": [
+                71
+            ],
+            "training": [
+                72
+            ],
+            "time.": [
+                73
+            ],
+            "Despite": [
+                74
+            ],
+            "the": [
+                75,
+                114,
+                125,
+                131,
+                140,
+                143,
+                151,
+                156
+            ],
+            "increasing": [
+                76
+            ],
+            "interest": [
+                77
+            ],
+            "this": [
+                79
+            ],
+            "framework,": [
+                80
+            ],
+            "an": [
+                81
+            ],
+            "in-depth": [
+                82
+            ],
+            "analysis": [
+                83,
+                112,
+                160
+            ],
+            "what": [
+                85,
+                94
+            ],
+            "model": [
+                89
+            ],
+            "capable": [
+                91
+            ],
+            "not": [
+                97
+            ],
+            "still": [
+                99
+            ],
+            "missing.": [
+                100
+            ],
+            "Motivated": [
+                101
+            ],
+            "by": [
+                102,
+                117,
+                168
+            ],
+            "this,": [
+                103
+            ],
+            "our": [
+                104
+            ],
+            "(i)": [
+                106
+            ],
+            "provides": [
+                107
+            ],
+            "quantitative": [
+                109
+            ],
+            "comparative": [
+                111
+            ],
+            "translations": [
+                115,
+                167
+            ],
+            "produced": [
+                116
+            ],
+            "bilingual,": [
+                118
+            ],
+            "systems;": [
+                122
+            ],
+            "(ii)": [
+                123
+            ],
+            "investigates": [
+                124
+            ],
+            "quality": [
+                127
+            ],
+            "two": [
+                129
+            ],
+            "currently": [
+                132
+            ],
+            "dominant": [
+                133
+            ],
+            "architectures": [
+                135
+            ],
+            "MT,": [
+                137
+            ],
+            "which": [
+                138,
+                188
+            ],
+            "are": [
+                139,
+                189
+            ],
+            "Recurrent": [
+                141
+            ],
+            "Transformer": [
+                144
+            ],
+            "ones;": [
+                145
+            ],
+            "(iii)": [
+                147
+            ],
+            "quantitatively": [
+                148
+            ],
+            "explores": [
+                149
+            ],
+            "how": [
+                150
+            ],
+            "closeness": [
+                152
+            ],
+            "between": [
+                153
+            ],
+            "influences": [
+                155
+            ],
+            "translation.": [
+                158
+            ],
+            "Our": [
+                159
+            ],
+            "leverages": [
+                161
+            ],
+            "multiple": [
+                162
+            ],
+            "professional": [
+                163
+            ],
+            "post-edits": [
+                164
+            ],
+            "automatic": [
+                166,
+                176
+            ],
+            "several": [
+                169
+            ],
+            "different": [
+                170
+            ],
+            "systems": [
+                171
+            ],
+            "focuses": [
+                173
+            ],
+            "both": [
+                174
+            ],
+            "on": [
+                175,
+                183
+            ],
+            "standard": [
+                177
+            ],
+            "metrics": [
+                178
+            ],
+            "(BLEU": [
+                179
+            ],
+            "TER)": [
+                181
+            ],
+            "widely": [
+                184
+            ],
+            "used": [
+                185
+            ],
+            "error": [
+                186
+            ],
+            "categories,": [
+                187
+            ],
+            "lexical,": [
+                190
+            ],
+            "morphology,": [
+                191
+            ],
+            "word": [
+                193
+            ],
+            "order": [
+                194
+            ],
+            "errors.": [
+                195
+            ]
+        },
+        "type": [
+            "JournalArticle",
+            "Conference",
+            "proceedings-article"
+        ],
+        "external_ids": {
+            "s2": "9fc0a6a0544b3f0ca0e1e2897805cf1310443095",
+            "acl": "C18-1054",
+            "mag": "2809456172",
+            "arxiv": "1806.06957",
+            "dblp": "conf/coling/LakewCF18",
+            "corpusid": 49310285,
+            "openalex": "https://openalex.org/W2963499433"
+        },
+        "year": 2018,
+        "concepts": [
+            {
+                "id": "https://openalex.org/C41008148",
+                "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                "display_name": "Computer science",
+                "level": 0,
+                "score": 0.8631904
+            },
+            {
+                "id": "https://openalex.org/C203005215",
+                "wikidata": "https://www.wikidata.org/wiki/Q79798",
+                "display_name": "Machine translation",
+                "level": 2,
+                "score": 0.8570899
+            },
+            {
+                "id": "https://openalex.org/C66322947",
+                "wikidata": "https://www.wikidata.org/wiki/Q11658",
+                "display_name": "Transformer",
+                "level": 3,
+                "score": 0.71161544
+            },
+            {
+                "id": "https://openalex.org/C2779545769",
+                "wikidata": "https://www.wikidata.org/wiki/Q5135364",
+                "display_name": "Closeness",
+                "level": 2,
+                "score": 0.69067216
+            },
+            {
+                "id": "https://openalex.org/C154945302",
+                "wikidata": "https://www.wikidata.org/wiki/Q11660",
+                "display_name": "Artificial intelligence",
+                "level": 1,
+                "score": 0.66633844
+            },
+            {
+                "id": "https://openalex.org/C204321447",
+                "wikidata": "https://www.wikidata.org/wiki/Q30642",
+                "display_name": "Natural language processing",
+                "level": 1,
+                "score": 0.64668053
+            },
+            {
+                "id": "https://openalex.org/C2776214188",
+                "wikidata": "https://www.wikidata.org/wiki/Q408386",
+                "display_name": "Inference",
+                "level": 2,
+                "score": 0.47584105
+            },
+            {
+                "id": "https://openalex.org/C134306372",
+                "wikidata": "https://www.wikidata.org/wiki/Q7754",
+                "display_name": "Mathematical analysis",
+                "level": 1,
+                "score": 0.0
+            },
+            {
+                "id": "https://openalex.org/C121332964",
+                "wikidata": "https://www.wikidata.org/wiki/Q413",
+                "display_name": "Physics",
+                "level": 0,
+                "score": 0.0
+            },
+            {
+                "id": "https://openalex.org/C33923547",
+                "wikidata": "https://www.wikidata.org/wiki/Q395",
+                "display_name": "Mathematics",
+                "level": 0,
+                "score": 0.0
+            },
+            {
+                "id": "https://openalex.org/C62520636",
+                "wikidata": "https://www.wikidata.org/wiki/Q944",
+                "display_name": "Quantum mechanics",
+                "level": 1,
+                "score": 0.0
+            },
+            {
+                "id": "https://openalex.org/C165801399",
+                "wikidata": "https://www.wikidata.org/wiki/Q25428",
+                "display_name": "Voltage",
+                "level": 2,
+                "score": 0.0
+            }
+        ],
+        "normalized_venue": "International Conference on Computational Linguistics"
+    },
+    "Topic": {
+        "id": 0,
+        "label": "0_neural_deep learning_tensorflow"
+    },
+    "AnswerCount": "1",
+    "CommentCount": "0",
+    "FavoriteCount": null,
+    "PostTypeId": "1",
+    "Score": "0",
+    "ViewCount": "271"
+}

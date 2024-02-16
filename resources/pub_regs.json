@@ -1,0 +1,254 @@
+[
+    {
+        "regex": "\\b(?P<doi>10\\.\\d{4,}(?:[.][0-9]+)*/(?:(?![&\"\\'<>])\\S)+)\\b",
+        "source": "doi"
+    },
+    {
+        "regex": "arxiv[.]org/[a-z]+/[0-9]+[.][0-9]+",
+        "source": "arxiv"
+    },
+    {
+        "regex": "openreview[.]net/(?:forum|pdf)[?]id=[a-zA-Z0-9]+",
+        "source": "openreview"
+    },
+    {
+        "regex": "scholar[.]archive[.]org/.+",
+        "source": "archive"
+    },
+    {
+        "regex": "paperswithcode[.]com/paper/.+",
+        "source": "paperswithcode"
+    },
+    {
+        "regex": "semanticscholar[.]org/.+",
+        "source": "semanticscholar"
+    },
+    {
+        "regex": "researchgate[.]net/.+",
+        "source": "researchgate"
+    },
+    {
+        "regex": "www[.]ams[.]org/.+",
+        "source": "ams"
+    },
+    {
+        "regex": "cambridge[.]org/core/.+",
+        "source": "cambridge"
+    },
+    {
+        "regex": "hindawi[.]com/.+",
+        "source": "hindawi"
+    },
+    {
+        "regex": "sciencedirect[.]com/science/.+",
+        "source": "elsevier"
+    },
+    {
+        "regex": "igi-global[.]com/.+",
+        "source": "igi-global"
+    },
+    {
+        "regex": "iospress[.]com/.+",
+        "source": "iospress"
+    },
+    {
+        "regex": "mdpi[.]com/.+",
+        "source": "mdpi"
+    },
+    {
+        "regex": "ieeexplore[.]ieee[.]org/.+",
+        "source": "ieee"
+    },
+    {
+        "regex": "ingentaconnect[.]com/.+",
+        "source": "ingenta"
+    },
+    {
+        "regex": "nowpublishers[.]com/.+",
+        "source": "nowpublishers"
+    },
+    {
+        "regex": "academic[.]oup[.]com/.+",
+        "source": "oxford"
+    },
+    {
+        "regex": "direct[.]mit[.]edu/.+",
+        "source": "mitpress"
+    },
+    {
+        "regex": "www[.]nature[.]com/.+",
+        "source": "nature",
+        "metanode": {
+            "title": [
+                {
+                    "name": "h1"
+                }
+            ],
+            "doi": [
+                {
+                    "class_": "c-bibliographic-information__citation"
+                }
+            ]
+        }
+    },
+    {
+        "regex": "pnas[.]org/.+",
+        "source": "pnas",
+        "metanode": {
+            "title": [
+                {
+                    "name": "h1"
+                }
+            ],
+            "doi": [
+                {
+                    "class_": "doi"
+                }
+            ]
+        }
+    },
+    {
+        "regex": "journals[.]plos[.]org/.+",
+        "source": "plos"
+    },
+    {
+        "regex": "worldscientific[.]com/.+",
+        "source": "worldscientific"
+    },
+    {
+        "regex": "[.]cell[.]com/.+",
+        "source": "cellpress"
+    },
+    {
+        "regex": "ncbi[.]nlm[.]nih[.]gov/books/.+",
+        "source": "nih"
+    },
+    {
+        "regex": "pubmed[.]ncbi[.]nlm[.]nih[.]gov/.+",
+        "source": "nih"
+    },
+    {
+        "regex": "ncbi[.]nlm[.]nih[.]gov/pubmed/.+",
+        "source": "nih"
+    },
+    {
+        "regex": "ncbi[.]nlm[.]nih[.]gov/pmc/articles/.+",
+        "source": "nih"
+    },
+    {
+        "regex": "\\bhal\\b.*?[.]fr/.+",
+        "source": "hal"
+    },
+    {
+        "regex": "hal[.]science/.+",
+        "source": "hal"
+    },
+    {
+        "regex": "inderscience[.]com/info/inarticle.+",
+        "source": "inderscience"
+    },
+    {
+        "regex": "sciendo[.]com/.+",
+        "source": "sciendo"
+    },
+    {
+        "regex": "revuesonline[.]com/.+",
+        "source": "revuesonline"
+    },
+    {
+        "regex": "ronpub[.]com/.+",
+        "source": "ronpub"
+    },
+    {
+        "regex": "aaai(?:press)?[.]org/.+",
+        "source": "aaai"
+    },
+    {
+        "regex": "thecvf[.]com/.+",
+        "source": "cvf"
+    },
+    {
+        "regex": "iclr[.]cc/.+",
+        "source": "iclr"
+    },
+    {
+        "regex": "machinelearning[.]org/.+",
+        "source": "mlr"
+    },
+    {
+        "regex": "proceedings[.]mlr[.]press.+",
+        "source": "mlr"
+    },
+    {
+        "regex": "ceur-ws[.]org/.+",
+        "source": "ceur"
+    },
+    {
+        "regex": "nbn-resolving[.]org/.+",
+        "source": "nbn"
+    },
+    {
+        "regex": "ijcai[.]org/.+",
+        "source": "ijcai"
+    },
+    {
+        "regex": "computer[.]org/csdl/.+",
+        "source": "ieee"
+    },
+    {
+        "regex": "jmlr[.]org/.+",
+        "source": "jmlr"
+    },
+    {
+        "regex": "nips[.]cc/.+",
+        "source": "nips"
+    },
+    {
+        "regex": "neurips[.]cc/.+",
+        "source": "nips"
+    },
+    {
+        "regex": "aclweb[.]org/.+",
+        "source": "acl"
+    },
+    {
+        "regex": "aclanthology[.]org/.+",
+        "source": "acl"
+    },
+    {
+        "regex": "usenix[.]org/.+",
+        "source": "usenix"
+    },
+    {
+        "regex": "ndss-symposium[.]org",
+        "source": "ndss"
+    },
+    {
+        "regex": "vldb[.]org/.+",
+        "source": "vldb"
+    },
+    {
+        "regex": "emsoft[.]org/.+",
+        "source": "emsoft"
+    },
+    {
+        "regex": "iw3c2[.]org/.+",
+        "source": "www"
+    },
+    {
+        "regex": "icml[.]cc/.+",
+        "source": "icml"
+    },
+    {
+        "regex": "naacl[.]org/.+",
+        "source": "naacl"
+    },
+    {
+        "regex": "iacr[.]org/.+",
+        "source": "iacr"
+    },
+    {
+        "regex": "sigchi[.]org/.+",
+        "source": "sigchi"
+    }
+]
