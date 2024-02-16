@@ -5,7 +5,7 @@ import { getBaseUrl } from "@/lib/utils";
 import { Fragment } from "react";
 import Heatmap, { RowHeatmapWithSelect } from "@/app/ui/dashboard/Heatmap";
 import Stack from "./ui/Stack";
-import ResponsiveIframe from "./ui/dashboard/ResponsiveIframe";
+import ResponsiveIframe from "./ui/dashboard/Iframe";
 
 async function getData(path: string) {
   const res = await fetch(`${getBaseUrl()}/${path}`);
@@ -117,6 +117,7 @@ export default async function Page() {
           align="start"
           gap="1.6rem"
           className={styles.graph_container}
+          style={{ marginBottom: 0 }}
         >
           <Stack align="start">
             <div>

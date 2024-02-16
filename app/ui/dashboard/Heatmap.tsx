@@ -5,6 +5,7 @@ import { ResponsiveHeatMapCanvas } from "@nivo/heatmap";
 import styles from "@/styles/heatmap.module.css";
 import { alegreya } from "../Fonts";
 import { useMediaQuery } from "react-responsive";
+import Select from "../Select";
 
 // Override console.error
 // This is a hack to suppress the warning about missing defaultProps in recharts library as of version 2.12
@@ -127,10 +128,9 @@ export function RowHeatmapWithSelect({
   }
   return (
     <Fragment>
-      <select
-        className={`${styles.select_menu} ${alegreya.className}`}
+      <Select
         value={selectedKey}
-        onChange={(e) => setSelectedKey(e.target.value)}
+        onChange={(e) => setSelectedKey((e.target as HTMLSelectElement).value)}
       >
         {options.map((option) => (
           <option
@@ -141,7 +141,7 @@ export function RowHeatmapWithSelect({
             {option}
           </option>
         ))}
-      </select>
+      </Select>
       <Heatmap data={heatmapData} {...props} />
     </Fragment>
   );
