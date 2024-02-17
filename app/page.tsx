@@ -1,24 +1,50 @@
 import { alegreya } from "@/app/ui/Fonts";
 import styles from "@/styles/page.module.css";
 import Link from "next/link";
-import { getBaseUrl } from "@/lib/utils";
-import { Fragment } from "react";
-import Heatmap, { RowHeatmapWithSelect } from "@/app/ui/dashboard/Heatmap";
+import React, { Fragment } from "react";
+import Heatmap, {
+  HeatmapProps,
+  RowHeatmapWithSelect,
+} from "@/app/ui/dashboard/Heatmap";
 import Stack from "./ui/Stack";
 import ResponsiveIframe from "./ui/dashboard/Iframe";
+import path from "path";
+import fs from "fs";
 
-async function getData(path: string) {
-  const res = await fetch(`${getBaseUrl()}/${path}`);
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return await res.json();
+async function getData(dataPath: string) {
+  const filePath = path.join(process.cwd(), "public", dataPath);
+  const fileContent = fs.readFileSync(filePath, "utf8");
+  return JSON.parse(fileContent);
 }
 
-export default async function Page() {
-  const heatmapData = await getData("/hm.json");
-  const simplifiedHeatmapData = await getData("/hm_simplified.json");
+type HeatmapDynamicProps = {
+  path: string;
+  isRow: boolean;
+  defaultKey?: string;
+  transpose?: boolean;
+} & Omit<HeatmapProps, "data">;
 
+const HeatmapDynamic: React.FC<HeatmapDynamicProps> = async ({
+  path,
+  isRow,
+  defaultKey = "",
+  transpose = false,
+  ...props
+}) => {
+  const data = await getData(path);
+  return isRow ? (
+    <RowHeatmapWithSelect
+      data={data}
+      defaultKey={defaultKey}
+      transpose={transpose}
+      {...props}
+    />
+  ) : (
+    <Heatmap data={data} {...props} />
+  );
+};
+
+export default async function Page() {
   return (
     <Fragment>
       <article className={`${alegreya.className} ${styles.intro}`}>
@@ -67,8 +93,9 @@ export default async function Page() {
               cited within the discussions of this domain.
               <i>(Note: FoRs not being cited are not shown)</i>
             </div>
-            <RowHeatmapWithSelect
-              data={heatmapData}
+            <HeatmapDynamic
+              path="/hm.json"
+              isRow={true}
               margin={{
                 top: 0,
                 right: 0,
@@ -89,8 +116,9 @@ export default async function Page() {
               Choose a Field of Research to see how it is referenced across
               different technical domains of Stack Overflow discussions.
             </div>
-            <RowHeatmapWithSelect
-              data={heatmapData}
+            <HeatmapDynamic
+              path="/hm.json"
+              isRow={true}
               margin={{
                 top: 10,
                 right: 0,
@@ -130,14 +158,15 @@ export default async function Page() {
               the articles referred in domain D0 are from the AI/ML/CV/NLP
               discipline.
             </div>
-            <Heatmap
+            <HeatmapDynamic
+              path="/hm_grouped.json"
+              isRow={false}
               margin={{
                 top: 10,
                 right: 160,
                 bottom: 56,
                 left: 0,
               }}
-              data={simplifiedHeatmapData}
               axisTop={{ tickSize: 0, tickPadding: 20 }}
               axisRight={{ tickSize: 3, tickPadding: 5 }}
               axisBottom={{ tickSize: 3, tickPadding: 8, tickRotation: 30 }}

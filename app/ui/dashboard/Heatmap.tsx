@@ -3,7 +3,6 @@
 import { Fragment, useState } from "react";
 import { ResponsiveHeatMapCanvas } from "@nivo/heatmap";
 import styles from "@/styles/heatmap.module.css";
-import { alegreya } from "../Fonts";
 import { useMediaQuery } from "react-responsive";
 import Select from "../Select";
 
@@ -24,7 +23,7 @@ export type HeatmapDataType = {
   }[];
 }[];
 
-type HeatmapProps = {
+export interface HeatmapProps {
   data: HeatmapDataType;
   height: string | number;
   margin: { top: number; right: number; bottom: number; left: number };
@@ -38,7 +37,7 @@ type HeatmapProps = {
   axisBottom?: any;
   axisLeft?: any;
   axisRight?: any;
-};
+}
 
 export default function Heatmap({
   data,

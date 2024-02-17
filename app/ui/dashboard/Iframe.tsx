@@ -28,6 +28,7 @@ export default function ResponsiveIframe({
       <iframe
         src={src}
         width={width}
+        loading="lazy"
         height={height}
         style={{
           transform: `scale(${scaleFactor})`,
