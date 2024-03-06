@@ -1,10 +1,14 @@
 ## A Tale of Two Communities: Exploring Academic References on Stack Overflow
 
-### Website: https://sciso.vercel.app/
+Author: Run Huang (USC) and Souti Chattopadhyay (USC)
 
-<small>
-Supplemental Artifacts
-</small>
+ACM Web Conference 2024, Short Paper
+
+#### Paper: https://doi.org/10.1145/3589335.3651464
+
+#### Dataset: https://figshare.com/articles/dataset/The_SORef_Dataset/25195805
+
+#### Website: https://sciso.vercel.app/
 
 ### 1. Included Academic Repositories
 

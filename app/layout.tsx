@@ -20,6 +20,12 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="G5FLtrjwkJhWzOzfDcsT9rdg9Pwbx3wwrosYz8DFHGo"
+        />
+      </head>
       <body style={{ position: "relative" }}>
         <header>
           <nav className={styles.navContainer}>
